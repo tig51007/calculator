@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('Check out'){
             steps {
-               git url: 'uat' 'https://github.com/juht/calculator.git'
+		git url: 'https://github.com/juht/calculator.git'
             }
         }
         stage ('Compile') {
