@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    environment {
+	registry = "juht/calculator"
+	registryCredential="dockerhub"
+	dockerImage=''
+    }
     stages {
         stage ('Check out'){
             steps {
@@ -40,6 +45,13 @@ pipeline {
 	stage('Packaging') {
 	    steps {
 		sh "./gradlew build"
+	    }
+        }
+	stage('Deploy Image'){
+	    steps {
+		script {
+		   dockerImage = docker.build registry + ":$BUILD_NUMBER"
+		}
 	    }
         }
     }
