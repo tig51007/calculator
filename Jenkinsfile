@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage ('Check out'){
             steps {
-		git bransh: 'uar', url: 'https://github.com/tig51007/calculator.git'
+		git branch: 'uar', url: 'https://github.com/tig51007/calculator.git'
             }
         }
         stage ('Compile') {
