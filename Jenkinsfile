@@ -1,14 +1,9 @@
 pipeline {
     agent any
-    environment {
-	registry = "tig51007/calculator"
-	registryCredential="dockerhub"
-	dockerImage=''
-    }
     stages {
         stage ('Check out'){
             steps {
-		git branch: 'uat', url: 'https://github.com/tig51007/calculator.git'
+		git bransh: 'uar', url: 'https://github.com/tig51007/calculator.git'
             }
         }
         stage ('Compile') {
