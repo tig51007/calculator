@@ -1,4 +1,9 @@
 pipeline {
+    environment {
+   	registry ="tig51007/calculator"
+	resistryCredentail="dockerhub"
+	dockerImage=''
+	} 
     agent any
     stages {
         stage ('Check out'){
